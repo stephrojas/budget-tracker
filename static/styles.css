@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --bg: #fefefe;
+    --card: #ffffff;
+    --text: #222;
+    --accent: #ff69b4;
+    --header: #3b3054;
+}
+
+[data-theme="dark"] {
+    --bg: #111;
+    --card: #1e1e1e;
+    --text: #f0f0f0;
+    --accent: #ff7eb3;
+    --header: #1c1c1c;
+}
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+             background-color: var(--header);
+             color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 8px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: var(--bg);
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e04899;
+            transform: scale(1.02);
+        }
+
+        .toggle-btn {
+            float: right;
+            margin-bottom: 10px;
+            background: none;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+}
+
